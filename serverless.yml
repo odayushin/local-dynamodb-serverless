@@ -1,0 +1,44 @@
+service: local-dynamodb
+plugins:
+  - serverless-dynamodb-local
+
+frameworkVersion: "2"
+
+provider:
+  name: aws
+  region: ap-northeast-1
+
+custom:
+  dynamodb:
+    stages:
+      - dev
+    start:
+      port: 8000
+      inMemory: true
+      migrate: true
+      seed: true
+    seed:
+      development:
+        sources:
+          - table: jankens
+            sources: [./migrations/records.json]
+
+resources:
+  Resources:
+    JankensTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: jankens
+        AttributeDefinitions:
+          - AttributeName: player
+            AttributeType: S
+          - AttributeName: unixtime
+            AttributeType: N
+        KeySchema:
+          - AttributeName: player
+            KeyType: HASH
+          - AttributeName: unixtime
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
