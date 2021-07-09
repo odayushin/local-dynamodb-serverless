@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "$(npm bin)/serverless dynamodb install",
     "dynamodb": "$(npm bin)/serverless dynamodb start"
   },
   "author": "",
