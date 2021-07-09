@@ -1,16 +1,12 @@
 [
-    {
-        "player": "user1",
-        "unixtime": 1482418800,
-        "player_hand": "rock",
-        "computer_hand": "paper",
-        "judge": "lose"
-    },
-    {
-        "player": "user2",
-        "unixtime": 1482418800,
-        "player_hand": "paper",
-        "computer_hand": "rock",
-        "judge": "win"
-    }
+  {
+    "attr1": "value1-1",
+    "attr2": "value2-1",
+    "attr3": "value3-1"
+  },
+  {
+    "attr1": "value1-2",
+    "attr2": "value2-2",
+    "attr3": "value3-2"
+  }
 ]

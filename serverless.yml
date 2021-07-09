@@ -20,25 +20,21 @@ custom:
     seed:
       development:
         sources:
-          - table: jankens
+          - table: SomeTable
             sources: [./migrations/records.json]
 
 resources:
   Resources:
-    JankensTable:
+    SomeTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: jankens
+        TableName: SomeTable
         AttributeDefinitions:
-          - AttributeName: player
+          - AttributeName: attr1
             AttributeType: S
-          - AttributeName: unixtime
-            AttributeType: N
         KeySchema:
-          - AttributeName: player
+          - AttributeName: attr1
             KeyType: HASH
-          - AttributeName: unixtime
-            KeyType: RANGE
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
