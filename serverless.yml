@@ -17,6 +17,7 @@ custom:
       inMemory: true
       migrate: true
       seed: true
+      sharedDb: true
     seed:
       development:
         sources:
